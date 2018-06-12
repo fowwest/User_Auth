@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 /* GET home page. */
 router.get('/register', function(req, res, next) {
   res.render('register', { title: 'Express' });
-});
+}); 
 
 /* GET home page. */
 router.get('/login', function(req, res, next) {
@@ -35,7 +35,8 @@ router.get('/profile', requiresLogin , function (req, res, next) {
       if (error) {
         return next(error);
       } else {
-        return res.json({ name: user.username, email: user.email });
+      	res.render('profile', { name: user.username, isUser: true});
+        // return res.json({ name: user.username, email: user.email });
       }
     });
 });
