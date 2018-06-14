@@ -35,7 +35,7 @@ router.get('/profile', requiresLogin , function (req, res, next) {
       if (error) {
         return next(error);
       } else {
-      	res.render('profile', { name: user.username, isUser: true});
+      	res.render('profile', {name: user.username, isUser: true});
         // return res.json({ name: user.username, email: user.email });
       }
     });
